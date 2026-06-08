@@ -1,0 +1,7 @@
+{# block content The header area, typically contains `Card:Title` #}
+
+<header class="kern-card__header {{ attributes.render('class') }}" {{ attributes }}>
+    <hgroup>
+        {%- block content %}{% endblock -%}
+    </hgroup>
+</header>

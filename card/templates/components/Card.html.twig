@@ -1,0 +1,17 @@
+{# @block content The card content, typically includes `Card:Content` with `Card:Header`, and/or `Card:Footer` #}
+
+<article class="kern-card">
+
+
+    <div class="kern-card__container">
+
+
+
+
+
+    </div>
+</article>
+
+<div class="card {{ attributes.render('class') }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</div>

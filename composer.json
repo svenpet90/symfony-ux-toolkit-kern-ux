@@ -1,0 +1,9 @@
+{
+  "require-dev": {
+    "php": "^8.5",
+    "symfony/ux-toolkit": "^3.0",
+    "symfony/ux-icons": "^3.0",
+    "symfony/http-client": "^8.0",
+    "twig/html-extra": "^3.24"
+  }
+}

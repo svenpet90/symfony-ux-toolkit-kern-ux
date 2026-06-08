@@ -1,0 +1,7 @@
+{# @prop as 'p' The HTML tag to render. Defaults to `p` #}
+{# @block preline The title text of the card #}
+{%- props as = 'p' -%}
+
+<{{ as }} class="kern-preline {{ attributes.render('class') }}" {{ attributes }}>
+{%- block content %}{% endblock -%}
+</{{ as }}>

@@ -1,0 +1,31 @@
+{# @prop variant 'primary'|'secondary'|'tertiary' The button style variant. Defaults to `primary` #}
+{# @prop size 'x-small' The button size. Defaults to normal size #}
+{# @prop as 'button' The HTML tag to render. Defaults to `button` #}
+{# @prop disabled boolean Whether the button is disabled. Defaults to false #}
+{%- props variant = 'primary', size = null, as = 'button', disabled = false -%}
+
+{%- set style = html_cva(
+    base: 'kern-btn',
+    variants: {
+        variant: {
+            primary: 'kern-btn--primary',
+            secondary: 'kern-btn--secondary',
+            tertiary: 'kern-btn--tertiary',
+        },
+        size: {
+            default: '',
+            x-small: 'kern-btn--x-small',
+        },
+    },
+) -%}
+
+<{{ as }}
+class="{{ style.apply({variant, size}, attributes.render('class')) }}{% if as == 'a' and disabled %} disabled{% endif %}"
+{% if as == 'a' %}role="button"{% endif %}
+    {% if as == 'a' and disabled %}aria-disabled="true"{% elseif disabled %}disabled{% endif %}
+    {{ attributes }}
+>
+<span class="kern-label">
+    {%- block content %}{% endblock -%}
+</span>
+</{{ as }}>
