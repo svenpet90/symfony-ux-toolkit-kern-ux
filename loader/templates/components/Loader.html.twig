@@ -1,4 +1,4 @@
 {# @block Ein Loader ist ein animiertes, sich drehendes Symbol, das die Nutzenden darauf hinweist, dass ein Inhalt geladen wird. #}
 <div class="kern-loader kern-loader--visible {{ attributes.render('class') }}" role="status" {{ attributes }} >
-    <span class="kern-sr-only">{{ sr-text }}</span>
+    <span class="kern-sr-only">{{ sr_text|default('Wird geladen...') }}</span>
 </div>
