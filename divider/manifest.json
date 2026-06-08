@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "Divider",
+  "description": "KERN-UX divider component.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}
