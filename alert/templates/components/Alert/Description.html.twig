@@ -1,0 +1,5 @@
+{# @block content The descriptive text of the alert #}
+
+<div class="kern-alert__body {{ attributes.render('class') }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</div>

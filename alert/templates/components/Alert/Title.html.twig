@@ -1,0 +1,7 @@
+{# @prop as 'h4' The HTML tag to render. Defaults to `h4` #}
+{# @block content The title text of the alert #}
+{%- props as = 'span' -%}
+
+<{{ as }} class="kern-title {{ attributes.render('class') }}" {{ attributes }}>
+{%- block content %}{% endblock -%}
+</{{ as }}>

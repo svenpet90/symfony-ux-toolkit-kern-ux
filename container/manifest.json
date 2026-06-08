@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "Container",
+  "description": "KERN-UX container component for flexible content containers.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}
