@@ -1,0 +1,17 @@
+{# @prop size 'large'|'small' The title size. Defaults to normal size #}
+{# @prop as The HTML tag to render. Defaults to `p` #}
+{%- props size = null, as = 'p' -%}
+
+{%- set style = html_cva(
+    base: 'kern-title',
+    variants: {
+        size: {
+            large: 'kern-title--large',
+            small: 'kern-title--small',
+        },
+    },
+) -%}
+
+<{{ as }} class="{{ style.apply({size}, attributes.render('class')) }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</{{ as }}>

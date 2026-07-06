@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "TaskList",
+  "description": "KERN-UX task list component for guiding users through a sequence of tasks with status badges.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}

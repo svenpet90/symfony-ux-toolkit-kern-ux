@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "Summary",
+  "description": "KERN-UX summary component for reviewing grouped form answers before submission.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}

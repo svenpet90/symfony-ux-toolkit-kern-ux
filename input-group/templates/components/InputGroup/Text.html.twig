@@ -1,0 +1,6 @@
+{# @prop variant 'readonly'|'disabled' Optional add-on state modifier #}
+{%- props variant = null -%}
+
+<span class="kern-input-group-text{% if variant == 'readonly' %} kern-input-group-text--readonly{% elseif variant == 'disabled' %} kern-input-group-text--disabled{% endif %} {{ attributes.render('class') }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</span>

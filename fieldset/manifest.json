@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "Fieldset",
+  "description": "KERN-UX fieldset component for grouping related form inputs with a legend, hint and error.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}

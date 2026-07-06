@@ -1,0 +1,20 @@
+{# @prop size 'x-small' The link size. Defaults to normal size #}
+{# @prop stretched boolean Whether the link should stretch to fill its nearest positioned ancestor. Defaults to false #}
+{# @block content The link text, optionally combined with an `<twig:Icon>` #}
+{%- props size = null, stretched = false -%}
+
+{%- set style = html_cva(
+    base: 'kern-link',
+    variants: {
+        size: {
+            'x-small': 'kern-link--x-small',
+        },
+        stretched: {
+            true: 'kern-link--stretched',
+        },
+    },
+) -%}
+
+<a class="{{ style.apply({size, stretched}, attributes.render('class')) }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</a>

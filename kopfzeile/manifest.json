@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "Kopfzeile",
+  "description": "KERN-UX Kopfzeile (official government header bar) rendered via the KERN web component.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}

@@ -1,0 +1,8 @@
+{# @prop key The term (dt) #}
+{# @block content The value (dd) #}
+{%- props key = null -%}
+
+<div class="kern-description-list-item {{ attributes.render('class') }}" {{ attributes }}>
+    <dt class="kern-description-list-item__key">{{ key }}</dt>
+    <dd class="kern-description-list-item__value">{%- block content %}{% endblock -%}</dd>
+</div>

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "InputGroup",
+  "description": "KERN-UX input group for combining an input with text add-ons or a button.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}

@@ -1,0 +1,15 @@
+{# @prop number Optional leading step number #}
+{# @prop title The summary title #}
+{# @prop id Optional id for the title (used by action links via aria-describedby) #}
+{# @block content The summary body, typically a `<twig:DescriptionList>` and actions #}
+{%- props number = null, title = null, id = null -%}
+
+<div class="kern-summary {{ attributes.render('class') }}" {{ attributes }}>
+    <div class="kern-summary__header">
+        {%- if number is not null %}<span class="kern-number">{{ number }}</span>{% endif -%}
+        <h3 class="kern-title kern-title--small"{% if id %} id="{{ id }}"{% endif %}>{{ title }}</h3>
+    </div>
+    <div class="kern-summary__body">
+        {%- block content %}{% endblock -%}
+    </div>
+</div>

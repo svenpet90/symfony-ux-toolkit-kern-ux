@@ -1,0 +1,17 @@
+{# @prop scope 'col'|'row' The header scope. Defaults to `col` #}
+{# @prop variant 'numeric'|'action' Optional alignment/behaviour modifier #}
+{%- props scope = 'col', variant = null -%}
+
+{%- set style = html_cva(
+    base: 'kern-table__header',
+    variants: {
+        variant: {
+            numeric: 'kern-table__header--numeric',
+            action: 'kern-table__header--action',
+        },
+    },
+) -%}
+
+<th scope="{{ scope }}" class="{{ style.apply({variant}, attributes.render('class')) }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</th>

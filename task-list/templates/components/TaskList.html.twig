@@ -1,0 +1,10 @@
+{# @prop title Optional section heading #}
+{# @block content A set of `<twig:TaskList:Item>` components #}
+{%- props title = null -%}
+
+<div class="kern-task-list {{ attributes.render('class') }}" {{ attributes }}>
+    {%- if title %}<div class="kern-task-list__header"><h2 class="kern-heading-medium">{{ title }}</h2></div>{% endif -%}
+    <ul class="kern-task-list__list">
+        {%- block content %}{% endblock -%}
+    </ul>
+</div>

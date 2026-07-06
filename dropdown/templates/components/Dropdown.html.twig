@@ -1,0 +1,15 @@
+{# @prop label The dropdown trigger label #}
+{# @prop open boolean Whether the dropdown is open by default. Defaults to false #}
+{# @block content The dropdown items, typically `<li>` entries with `<twig:Link>` #}
+{%- props label = null, open = false -%}
+
+<details class="kern-dropdown {{ attributes.render('class') }}"{% if open %} open{% endif %} {{ attributes }}>
+    <summary class="kern-dropdown__header">
+        <span class="kern-label">{{ label }}</span>
+    </summary>
+    <div class="kern-dropdown__body">
+        <ul class="kern-list">
+            {%- block content %}{% endblock -%}
+        </ul>
+    </div>
+</details>

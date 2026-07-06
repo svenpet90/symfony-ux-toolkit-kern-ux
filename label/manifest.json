@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "Label",
+  "description": "KERN-UX label component for captions and form field labels.",
+  "copy-files": {
+    "templates/": "templates/"
+  },
+  "dependencies": {
+    "composer": ["twig/extra-bundle", "twig/html-extra:^3.12.0"]
+  }
+}

@@ -1,0 +1,12 @@
+{# @prop value The current progress value #}
+{# @prop max The maximum value. Defaults to 100 #}
+{# @prop label Optional label text, e.g. `Schritt 2 von 5` #}
+{# @prop id The id linking the label to the progress element #}
+{# @prop labelPosition 'above'|'below' Where to render the label. Defaults to `above` #}
+{%- props value = null, max = 100, label = null, id = null, labelPosition = 'above' -%}
+
+<div class="kern-progress {{ attributes.render('class') }}" {{ attributes }}>
+    {%- if label and labelPosition == 'above' %}<label class="kern-label"{% if id %} for="{{ id }}"{% endif %}>{{ label }}</label>{% endif -%}
+    <progress{% if id %} id="{{ id }}"{% endif %}{% if value is not null %} value="{{ value }}"{% endif %} max="{{ max }}"></progress>
+    {%- if label and labelPosition == 'below' %}<label class="kern-label"{% if id %} for="{{ id }}"{% endif %}>{{ label }}</label>{% endif -%}
+</div>

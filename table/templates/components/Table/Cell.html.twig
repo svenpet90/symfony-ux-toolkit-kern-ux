@@ -1,0 +1,16 @@
+{# @prop variant 'numeric'|'action' Optional alignment/behaviour modifier #}
+{%- props variant = null -%}
+
+{%- set style = html_cva(
+    base: 'kern-table__cell',
+    variants: {
+        variant: {
+            numeric: 'kern-table__cell--numeric',
+            action: 'kern-table__cell--action',
+        },
+    },
+) -%}
+
+<td class="{{ style.apply({variant}, attributes.render('class')) }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</td>

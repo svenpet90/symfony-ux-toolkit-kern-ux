@@ -1,0 +1,22 @@
+{# @prop label The radio label #}
+{# @prop name The input name attribute (shared across a radio group) #}
+{# @prop id The input id. Defaults to `name` #}
+{# @prop value The input value #}
+{# @prop checked boolean Whether the radio is selected. Defaults to false #}
+{# @prop error boolean Whether the radio is in its error state. Defaults to false #}
+{%- props label = null, name = null, id = null, value = null, checked = false, error = false -%}
+{%- set id = id ?? (name ~ '-' ~ value) -%}
+
+<div class="kern-form-check {{ attributes.render('class') }}">
+    <input
+        class="kern-form-check__radio{% if error %} kern-form-check__radio--error{% endif %}"
+        id="{{ id }}"
+        {%- if name %} name="{{ name }}"{% endif %}
+        type="radio"
+        {%- if value is not null %} value="{{ value }}"{% endif %}
+        {%- if checked %} checked{% endif %}
+        {%- if error %} aria-invalid="true"{% endif %}
+        {{ attributes.without('class') }}
+    >
+    <label class="kern-label" for="{{ id }}">{{ label }}{% block content %}{% endblock %}</label>
+</div>

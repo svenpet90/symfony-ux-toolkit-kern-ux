@@ -1,0 +1,12 @@
+{# @prop title The dialog title #}
+{# @prop id Optional id for the title, matching the dialog's `aria-labelledby` #}
+{# @prop closeLabel Accessible label for the close button. Defaults to `Schließen` #}
+{%- props title = null, id = null, closeLabel = 'Schließen' -%}
+
+<header class="kern-dialog__header {{ attributes.render('class') }}" {{ attributes }}>
+    <h2 class="kern-title kern-title--large"{% if id %} id="{{ id }}"{% endif %}>{{ title }}{% block content %}{% endblock %}</h2>
+    <button type="button" class="kern-btn kern-btn--tertiary" data-dialog-close>
+        <span class="kern-icon kern-icon--close" aria-hidden="true"></span>
+        <span class="kern-sr-only">{{ closeLabel }}</span>
+    </button>
+</header>

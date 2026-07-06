@@ -1,0 +1,19 @@
+{# @prop size 'display'|'x-large'|'large'|'medium'|'small' The heading size. Defaults to `large` #}
+{# @prop as 'h1'|'h2'|'h3'|'h4'|'h5'|'h6' The HTML heading tag to render. Defaults to `h2` #}
+{%- props size = 'large', as = 'h2' -%}
+
+{%- set style = html_cva(
+    variants: {
+        size: {
+            display: 'kern-heading-display',
+            'x-large': 'kern-heading-x-large',
+            large: 'kern-heading-large',
+            medium: 'kern-heading-medium',
+            small: 'kern-heading-small',
+        },
+    },
+) -%}
+
+<{{ as }} class="{{ style.apply({size}, attributes.render('class')) }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</{{ as }}>

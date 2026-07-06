@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "Radio",
+  "description": "KERN-UX radio form input with label and error support.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}

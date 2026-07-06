@@ -1,0 +1,17 @@
+{# @prop size 'large'|'small' The subline size. Defaults to normal size #}
+{# @prop as The HTML tag to render. Defaults to `p` #}
+{%- props size = null, as = 'p' -%}
+
+{%- set style = html_cva(
+    base: 'kern-subline',
+    variants: {
+        size: {
+            large: 'kern-subline--large',
+            small: 'kern-subline--small',
+        },
+    },
+) -%}
+
+<{{ as }} class="{{ style.apply({size}, attributes.render('class')) }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</{{ as }}>

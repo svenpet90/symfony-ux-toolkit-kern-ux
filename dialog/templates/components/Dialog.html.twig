@@ -1,0 +1,9 @@
+{# @prop id The dialog id, referenced by openers via `data-dialog-target` #}
+{# @prop open boolean Whether to render the dialog open. Defaults to false #}
+{# @prop labelledby The id of the heading element that labels the dialog #}
+{# @block content Typically `<twig:Dialog:Header>`, `<twig:Dialog:Body>` and `<twig:Dialog:Footer>` #}
+{%- props id = null, open = false, labelledby = null -%}
+
+<dialog{% if id %} id="{{ id }}"{% endif %} class="kern-dialog {{ attributes.render('class') }}"{% if labelledby %} aria-labelledby="{{ labelledby }}"{% endif %}{% if open %} open{% endif %} {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</dialog>

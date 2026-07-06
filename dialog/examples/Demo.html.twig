@@ -1,0 +1,27 @@
+<button type="button" class="kern-btn kern-btn--primary" data-dialog-target="demo-dialog">
+    Dialog öffnen
+</button>
+
+<twig:Dialog id="demo-dialog" labelledby="demo-dialog-title">
+    <twig:Dialog:Header title="Angaben bestätigen" id="demo-dialog-title" />
+    <twig:Dialog:Body>
+        <p class="kern-body">Möchten Sie Ihre Angaben wirklich absenden?</p>
+    </twig:Dialog:Body>
+    <twig:Dialog:Footer>
+        <button type="button" class="kern-btn kern-btn--secondary" data-dialog-close>Abbrechen</button>
+        <button type="button" class="kern-btn kern-btn--primary">Absenden</button>
+    </twig:Dialog:Footer>
+</twig:Dialog>
+
+<script>
+    document.querySelectorAll('[data-dialog-target]').forEach(function (button) {
+        var dialog = document.getElementById(button.getAttribute('data-dialog-target'));
+        button.addEventListener('click', function () { dialog.showModal(); });
+        dialog.addEventListener('click', function (event) {
+            if (event.target === dialog) { dialog.close(); }
+        });
+        dialog.querySelectorAll('[data-dialog-close]').forEach(function (closer) {
+            closer.addEventListener('click', function () { dialog.close(); });
+        });
+    });
+</script>

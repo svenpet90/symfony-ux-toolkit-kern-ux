@@ -28,4 +28,31 @@ php bin/console ux:install button --kit https://github.com/svenpet90/symfony-ux-
 
 For component usage examples, see every components' examples folder.
 
-> Note: The package is in progress, KERN-UX components might still be missing and bugs might happen.
+## Available components
+
+### Layout
+`Container` · `Row` · `Col` · `Divider`
+
+### Typography
+`Heading` · `Title` · `Preline` · `Subline` · `Label` · `Body` · `List` · `Link`
+
+### Content & feedback
+`Alert` · `Badge` · `Card` · `Accordion` · `Dialog` · `Dropdown` · `Loader` · `Progress` · `Icon`
+
+### Data
+`Table` (`Table:Head`, `Table:Body`, `Table:Footer`, `Table:Row`, `Table:Header`, `Table:Cell`) · `DescriptionList` (`DescriptionList:Item`) · `Summary` (`Summary:Group`) · `TaskList` (`TaskList:Item`)
+
+### Forms
+`Text` · `Email` · `Tel` · `Url` · `Number` · `Password` · `Date` · `Textarea` · `Select` · `Checkbox` · `Radio` · `File` · `Fieldset` · `InputGroup` (`InputGroup:Text`)
+
+### Government header
+`Kopfzeile` (rendered via the KERN `kern-kopfzeile` web component — include its script once per page; see the component's example)
+
+## Not (yet) available
+
+These KERN-UX components are marked "in Bearbeitung" (under development) upstream or are not published as open source, so they are intentionally not part of this kit yet:
+
+- **Tabs**, **Header**, **Notification Banner**, **Search** — under development in KERN-UX 2.6.
+- **Bildwortmarke** — a sovereign emblem that KERN does not publish under an open-source license or as source code.
+
+> Note: The package is in progress. It tracks KERN-UX 2.6; components may still be added and bugs might happen.

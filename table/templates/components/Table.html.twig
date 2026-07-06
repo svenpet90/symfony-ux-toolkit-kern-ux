@@ -1,0 +1,24 @@
+{# @prop title Optional caption rendered as the table title #}
+{# @prop size 'small' Compact table sizing. Defaults to normal size #}
+{# @prop striped boolean Whether to render alternating row background colors. Defaults to false #}
+{# @prop responsive boolean Whether to wrap the table for horizontal scrolling on small screens. Defaults to false #}
+{%- props title = null, size = null, striped = false, responsive = false -%}
+
+{%- set style = html_cva(
+    base: 'kern-table',
+    variants: {
+        size: {
+            small: 'kern-table--small',
+        },
+        striped: {
+            true: 'kern-table--striped',
+        },
+    },
+) -%}
+
+{%- if responsive %}<div class="kern-table-responsive" tabindex="0">{% endif -%}
+<table class="{{ style.apply({size, striped}, attributes.render('class')) }}" {{ attributes }}>
+    {%- if title %}<caption class="kern-title">{{ title }}</caption>{% endif -%}
+    {%- block content %}{% endblock -%}
+</table>
+{%- if responsive %}</div>{% endif -%}

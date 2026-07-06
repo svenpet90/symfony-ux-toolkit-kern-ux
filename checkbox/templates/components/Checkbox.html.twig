@@ -1,0 +1,22 @@
+{# @prop label The checkbox label #}
+{# @prop name The input name attribute #}
+{# @prop id The input id. Defaults to `name` #}
+{# @prop value The input value #}
+{# @prop checked boolean Whether the checkbox is checked. Defaults to false #}
+{# @prop error boolean Whether the checkbox is in its error state. Defaults to false #}
+{%- props label = null, name = null, id = null, value = null, checked = false, error = false -%}
+{%- set id = id ?? name -%}
+
+<div class="kern-form-check {{ attributes.render('class') }}">
+    <input
+        class="kern-form-check__checkbox{% if error %} kern-form-check__checkbox--error{% endif %}"
+        id="{{ id }}"
+        {%- if name %} name="{{ name }}"{% endif %}
+        type="checkbox"
+        {%- if value is not null %} value="{{ value }}"{% endif %}
+        {%- if checked %} checked{% endif %}
+        {%- if error %} aria-invalid="true"{% endif %}
+        {{ attributes.without('class') }}
+    >
+    <label class="kern-label" for="{{ id }}">{{ label }}{% block content %}{% endblock %}</label>
+</div>

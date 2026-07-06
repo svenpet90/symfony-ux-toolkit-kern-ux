@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "Icon",
+  "description": "KERN-UX icon component rendering a KERN icon from the built-in icon set.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}

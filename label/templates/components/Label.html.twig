@@ -1,0 +1,19 @@
+{# @prop size 'large'|'small' The label size. Defaults to normal size #}
+{# @prop as The HTML tag to render. Defaults to `span` #}
+{# @prop optional string When set, appends an "optional" hint after the label text #}
+{%- props size = null, as = 'span', optional = null -%}
+
+{%- set style = html_cva(
+    base: 'kern-label',
+    variants: {
+        size: {
+            large: 'kern-label--large',
+            small: 'kern-label--small',
+        },
+    },
+) -%}
+
+<{{ as }} class="{{ style.apply({size}, attributes.render('class')) }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+    {%- if optional %} <span class="kern-label__optional">{{ optional }}</span>{% endif -%}
+</{{ as }}>

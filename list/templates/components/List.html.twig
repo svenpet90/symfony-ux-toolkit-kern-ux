@@ -1,0 +1,26 @@
+{# @prop variant 'bullet'|'number' The list marker style. Defaults to no marker #}
+{# @prop size 'large'|'small' The list text size. Defaults to normal size #}
+{# @prop horizontal boolean Whether to lay the list out horizontally. Defaults to false #}
+{# @prop as 'ul'|'ol' The list tag to render. Defaults to `ul` #}
+{%- props variant = null, size = null, horizontal = false, as = 'ul' -%}
+
+{%- set style = html_cva(
+    base: 'kern-list',
+    variants: {
+        variant: {
+            bullet: 'kern-list--bullet',
+            number: 'kern-list--number',
+        },
+        size: {
+            large: 'kern-list--large',
+            small: 'kern-list--small',
+        },
+        horizontal: {
+            true: 'kern-list--horizontal',
+        },
+    },
+) -%}
+
+<{{ as }} class="{{ style.apply({variant, size, horizontal}, attributes.render('class')) }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</{{ as }}>

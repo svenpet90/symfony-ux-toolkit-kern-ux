@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "Progress",
+  "description": "KERN-UX progress component wrapping the native progress element with an optional label.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}

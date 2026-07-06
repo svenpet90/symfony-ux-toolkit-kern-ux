@@ -1,0 +1,7 @@
+{# @prop variant 'col' Stack key above value instead of side-by-side. Defaults to row layout #}
+{# @block content A set of `<twig:DescriptionList:Item>` components #}
+{%- props variant = null -%}
+
+<dl class="kern-description-list{% if variant == 'col' %} kern-description-list--col{% endif %} {{ attributes.render('class') }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</dl>

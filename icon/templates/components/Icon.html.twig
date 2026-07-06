@@ -1,0 +1,8 @@
+{# @prop name The KERN icon name, e.g. `info`, `check`, `close`, `search`, `arrow-forward`. Required #}
+{# @prop size 'small'|'large'|'x-large' The icon size. Defaults to normal size #}
+{%- props name, size = null -%}
+
+<span class="kern-icon kern-icon--{{ name }}{% if size %} kern-icon--{{ size }}{% endif %} {{ attributes.render('class') }}"
+      aria-hidden="true"
+      {{ attributes }}
+></span>

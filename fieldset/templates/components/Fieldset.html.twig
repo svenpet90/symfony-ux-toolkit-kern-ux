@@ -1,0 +1,18 @@
+{# @prop legend The fieldset legend (group label) #}
+{# @prop id Base id used to wire hint/error via aria-describedby. Defaults to `fieldset` #}
+{# @prop hint Optional guidance text shown below the legend #}
+{# @prop error Optional error message; when set the fieldset renders in its error state #}
+{# @prop optional Optional suffix appended to the legend, e.g. `- Optional` #}
+{# @prop horizontal boolean Whether to lay the body out horizontally. Defaults to false #}
+{# @block content The grouped form inputs #}
+{%- props legend = null, id = 'fieldset', hint = null, error = null, optional = null, horizontal = false -%}
+{%- set describedby = [hint ? id ~ '-hint' : '', error ? id ~ '-error' : '']|filter(v => v)|join(' ') -%}
+
+<fieldset class="kern-fieldset{% if error %} kern-fieldset--error{% endif %} {{ attributes.render('class') }}"{% if describedby %} aria-describedby="{{ describedby }}"{% endif %} {{ attributes.without('class') }}>
+    <legend class="kern-label kern-label--large">{{ legend }}{% if optional %} <span class="kern-label__optional">{{ optional }}</span>{% endif %}</legend>
+    {%- if hint %}<div class="kern-hint" id="{{ id }}-hint">{{ hint }}</div>{% endif -%}
+    <div class="kern-fieldset__body{% if horizontal %} kern-fieldset__body--horizontal{% endif %}">
+        {%- block content %}{% endblock -%}
+    </div>
+    {%- if error %}<p class="kern-error" id="{{ id }}-error"><span class="kern-icon kern-icon--danger" aria-hidden="true"></span><span class="kern-body">{{ error }}</span></p>{% endif -%}
+</fieldset>

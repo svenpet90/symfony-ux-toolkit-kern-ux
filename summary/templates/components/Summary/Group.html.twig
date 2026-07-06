@@ -1,0 +1,8 @@
+{# @prop title Optional group heading #}
+{# @block content A set of `<twig:Summary>` components #}
+{%- props title = null -%}
+
+<div class="kern-summary-group {{ attributes.render('class') }}" {{ attributes }}>
+    {%- if title %}<div class="kern-summary-group__header"><h2 class="kern-heading-medium">{{ title }}</h2></div>{% endif -%}
+    {%- block content %}{% endblock -%}
+</div>
