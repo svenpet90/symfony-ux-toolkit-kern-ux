@@ -1,7 +1,7 @@
 {# @prop variant 'info'|'success'|'warning'|'danger' The badge style variant #}
 {# @prop size 'small' The badge size. Defaults to normal size #}
 {# @prop icon The optional KERN icon name shown before the label #}
-{%- props variant = null, size = null, icon = null -%}
+{%- props variant = '', size = '', icon = null -%}
 
 {%- set style = html_cva(
     base: 'kern-badge',

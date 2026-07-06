@@ -2,7 +2,7 @@
 {# @prop bold boolean Whether to render the text with strong weight. Defaults to false #}
 {# @prop muted boolean Whether to render the text in a muted color. Defaults to false #}
 {# @prop as The HTML tag to render. Defaults to `p` #}
-{%- props size = null, bold = false, muted = false, as = 'p' -%}
+{%- props size = '', bold = false, muted = false, as = 'p' -%}
 
 {%- set style = html_cva(
     base: 'kern-body',

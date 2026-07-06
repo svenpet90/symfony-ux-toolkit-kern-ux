@@ -2,7 +2,7 @@
 {# @prop size 'small' Compact table sizing. Defaults to normal size #}
 {# @prop striped boolean Whether to render alternating row background colors. Defaults to false #}
 {# @prop responsive boolean Whether to wrap the table for horizontal scrolling on small screens. Defaults to false #}
-{%- props title = null, size = null, striped = false, responsive = false -%}
+{%- props title = null, size = '', striped = false, responsive = false -%}
 
 {%- set style = html_cva(
     base: 'kern-table',
