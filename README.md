@@ -1,3 +1,5 @@
+> Note: The package is in progress. It tracks KERN-UX 2.6; components may still be added and bugs might happen.
+
 # Component kit based on KERN-UX 2.6 for Symfony Toolkit
 
 ## Requirements
@@ -54,5 +56,4 @@ These KERN-UX components are marked "in Bearbeitung" (under development) upstrea
 
 - **Tabs**, **Header**, **Notification Banner**, **Search** — under development in KERN-UX 2.6.
 - **Bildwortmarke** — a sovereign emblem that KERN does not publish under an open-source license or as source code.
-
-> Note: The package is in progress. It tracks KERN-UX 2.6; components may still be added and bugs might happen.
+- 
