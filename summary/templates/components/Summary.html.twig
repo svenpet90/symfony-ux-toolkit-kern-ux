@@ -6,8 +6,9 @@
 
 <div class="kern-summary {{ attributes.render('class') }}" {{ attributes }}>
     <div class="kern-summary__header">
-        {%- if number is not null %}<span class="kern-number">{{ number }}</span>{% endif -%}
-        <h3 class="kern-title kern-title--small"{% if id %} id="{{ id }}"{% endif %}>{{ title }}</h3>
+        <h3 class="kern-title kern-title--small{% if number is not null %} kern-summary__title-wrapper{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+            {%- if number is not null %}<span class="kern-number">{{ number }}</span><span>{{ title }}</span>{% else %}{{ title }}{% endif -%}
+        </h3>
     </div>
     <div class="kern-summary__body">
         {%- block content %}{% endblock -%}

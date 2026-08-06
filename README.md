@@ -1,6 +1,6 @@
-> Note: The package is in progress. It tracks KERN-UX 2.6; components may still be added and bugs might happen.
+> Note: The package is in progress. It tracks KERN-UX 2.7; components may still be added and bugs might happen.
 
-# Component kit based on KERN-UX 2.6 for Symfony Toolkit
+# Component kit based on KERN-UX 2.7 for Symfony Toolkit
 
 ## Requirements
 
@@ -36,7 +36,7 @@ For component usage examples, see every components' examples folder.
 `Container` · `Row` · `Col` · `Divider`
 
 ### Typography
-`Heading` · `Title` · `Preline` · `Subline` · `Label` · `Body` · `List` · `Link`
+`Heading` · `Title` · `Preline` · `Subline` · `Label` · `Body` · `List` · `Link` · `Hgroup`
 
 ### Content & feedback
 `Alert` · `Badge` · `Card` · `Accordion` · `Dialog` · `Dropdown` · `Loader` · `Progress` · `Icon`
@@ -54,6 +54,5 @@ For component usage examples, see every components' examples folder.
 
 These KERN-UX components are marked "in Bearbeitung" (under development) upstream or are not published as open source, so they are intentionally not part of this kit yet:
 
-- **Tabs**, **Header**, **Notification Banner**, **Search** — under development in KERN-UX 2.6.
+- **Tabs**, **Header**, **Notification Banner**, **Search** — under development in KERN-UX 2.7.
 - **Bildwortmarke** — a sovereign emblem that KERN does not publish under an open-source license or as source code.
-- 

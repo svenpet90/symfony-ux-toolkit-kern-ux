@@ -1,13 +1,14 @@
 {# @prop fluid boolean Whether the inner container spans the full width. Defaults to false #}
 {# @prop label Optional custom label. Defaults to the official government text #}
 {# @prop breakpoints Optional comma-separated `min-width:container-width` pairs overriding the defaults #}
+{# @prop theme 'light'|'dark' Force the header theme regardless of the page theme. Defaults to inheriting the page theme #}
 {#
    The Kopfzeile is a web component. Include its script once per page, e.g.:
    <script type="module" src="https://cdn.jsdelivr.net/npm/@kern-ux/native/dist/js/kern-kopfzeile.js"></script>
 #}
-{%- props fluid = false, label = null, breakpoints = null -%}
+{%- props fluid = false, label = null, breakpoints = null, theme = null -%}
 
-<kern-kopfzeile{% if fluid %} fluid{% endif %}{% if breakpoints %} breakpoints="{{ breakpoints }}"{% endif %} {{ attributes }}>
+<kern-kopfzeile{% if fluid %} fluid{% endif %}{% if theme %} theme="{{ theme }}"{% endif %}{% if breakpoints %} breakpoints="{{ breakpoints }}"{% endif %} {{ attributes }}>
     {%- if label %}{{ label }}{% endif -%}
     {%- block content %}{% endblock -%}
 </kern-kopfzeile>

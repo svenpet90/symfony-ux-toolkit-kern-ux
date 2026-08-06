@@ -1,12 +1,12 @@
 # Getting started
 
-This kit provides ready-to-use and fully-customizable UI Twig components based on [KERN-UX 2.6](https://www.kern-ux.de/) components's **design**.
+This kit provides ready-to-use and fully-customizable UI Twig components based on [KERN-UX 2.7](https://www.kern-ux.de/) components's **design**.
 
 Please note that not every KERN-UX component is available in this kit, but we are working on it!
 
 ## Requirements
 
-This kit requires KERN-UX 2.6 to work:
+This kit requires KERN-UX 2.7 to work:
 
 - Follow the [official KERN-UX documentation](https://www.kern-ux.de/design-system/erste-schritte/entwicklerinnen/einbinden-von-kern)
 ## Installation

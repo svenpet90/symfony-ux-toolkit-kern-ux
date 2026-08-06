@@ -106,6 +106,52 @@ final class ComponentRenderTest extends KernelTestCase
         self::assertStringContainsString('class="kern-table__cell kern-table__cell--numeric"', $html);
     }
 
+    public function testLinkUsesRenamedSmallModifier(): void
+    {
+        $html = $this->render('<twig:Link href="#" size="small" noVisitedState="true">Klein</twig:Link>');
+
+        // KERN-UX 2.7 renamed the `x-small` link modifier to `small`.
+        self::assertStringContainsString('kern-link--small', $html);
+        self::assertStringNotContainsString('kern-link--x-small', $html);
+        self::assertStringContainsString('kern-link--no-visited-state', $html);
+    }
+
+    public function testSummaryPlacesNumberInsideTitleWrapper(): void
+    {
+        $html = $this->render('<twig:Summary number="1" title="Angaben zur Person" id="s1" />');
+
+        // KERN-UX 2.7 moved kern-number into the h3 (kern-summary__title-wrapper).
+        self::assertMatchesRegularExpression(
+            '#<h3 class="kern-title kern-title--small kern-summary__title-wrapper" id="s1">\s*<span class="kern-number">1</span><span>Angaben zur Person</span>#',
+            $html,
+        );
+    }
+
+    public function testTaskListItemUsesContentWrapper(): void
+    {
+        $html = $this->render(<<<'TWIG'
+            <twig:TaskList title="Antrag">
+                <twig:TaskList:Item number="1" title="Angaben zur Person" id="t1">
+                    <twig:Badge variant="success" size="small">Erledigt</twig:Badge>
+                </twig:TaskList:Item>
+            </twig:TaskList>
+            TWIG);
+
+        // KERN-UX 2.7 wraps the number + text inside the link (kern-task-list__content-wrapper).
+        self::assertStringContainsString('kern-link kern-link--stretched kern-task-list__content-wrapper', $html);
+        self::assertMatchesRegularExpression(
+            '#kern-task-list__content-wrapper"[^>]*>\s*<span class="kern-number">1</span><span>Angaben zur Person</span>#',
+            $html,
+        );
+    }
+
+    public function testHgroupRenders(): void
+    {
+        $html = $this->render('<twig:Hgroup><twig:Title>Titel</twig:Title></twig:Hgroup>');
+
+        self::assertStringContainsString('<hgroup class="kern-hgroup', $html);
+    }
+
     private function render(string $template): string
     {
         return self::twig()->createTemplate($template)->render();

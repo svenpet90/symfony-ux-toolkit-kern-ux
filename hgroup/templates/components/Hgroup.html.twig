@@ -1,0 +1,7 @@
+{# @prop as The HTML tag to render. Defaults to `hgroup` #}
+{# @block content A `<twig:Preline>`, a heading/`<twig:Title>` and a `<twig:Subline>`; they are reordered visually (preline, heading, subline) regardless of source order #}
+{%- props as = 'hgroup' -%}
+
+<{{ as }} class="kern-hgroup {{ attributes.render('class') }}" {{ attributes }}>
+    {%- block content %}{% endblock -%}
+</{{ as }}>
