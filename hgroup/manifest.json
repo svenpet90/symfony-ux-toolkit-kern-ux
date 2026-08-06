@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-recipe-v1.json",
+  "type": "component",
+  "name": "Hgroup",
+  "description": "KERN-UX hgroup component that groups a preline, heading/title and subline in the correct visual order.",
+  "copy-files": {
+    "templates/": "templates/"
+  }
+}

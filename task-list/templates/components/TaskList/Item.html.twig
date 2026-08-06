@@ -6,9 +6,11 @@
 {%- props number = null, title = null, href = '#', id = null -%}
 
 <li class="kern-task-list__item">
-    {%- if number is not null %}<span class="kern-number">{{ number }}</span>{% endif -%}
     <div class="kern-task-list__title"{% if id %} id="{{ id }}-title"{% endif %}>
-        <a href="{{ href }}" class="kern-link kern-link--stretched"{% if id %} aria-describedby="{{ id }}-status"{% endif %}>{{ title }}</a>
+        <a href="{{ href }}" class="kern-link kern-link--stretched kern-task-list__content-wrapper"{% if id %} aria-describedby="{{ id }}-status"{% endif %}>
+            {%- if number is not null %}<span class="kern-number">{{ number }}</span>{% endif -%}
+            <span>{{ title }}</span>
+        </a>
         <div class="kern-task-list__status"{% if id %} id="{{ id }}-status"{% endif %}>
             {%- block content %}{% endblock -%}
         </div>
