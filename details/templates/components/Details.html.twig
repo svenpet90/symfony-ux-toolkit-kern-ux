@@ -1,0 +1,13 @@
+{# @prop title The summary text. Describe the hidden content instead of using a generic "show more" #}
+{# @prop open boolean Whether the details element is expanded by default. Defaults to false #}
+{# @block content The collapsible body content #}
+{%- props title = null, open = false -%}
+
+<details class="kern-details {{ attributes.render('class') }}"{% if open %} open{% endif %} {{ attributes }}>
+    <summary class="kern-details__header">
+        <span class="kern-label">{{ title }}</span>
+    </summary>
+    <div class="kern-details__body">
+        {%- block content %}{% endblock -%}
+    </div>
+</details>

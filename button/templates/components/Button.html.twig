@@ -1,5 +1,5 @@
 {# @prop variant 'primary'|'secondary'|'tertiary' The button style variant. Defaults to `primary` #}
-{# @prop size 'x-small' The button size. Defaults to normal size #}
+{# @prop size 'x-small'|'small'|'large'|'x-large' The button size. Defaults to normal size #}
 {# @prop as 'button' The HTML tag to render. Defaults to `button` #}
 {# @prop disabled boolean Whether the button is disabled. Defaults to false #}
 {%- props variant = 'primary', size = '', as = 'button', disabled = false -%}
@@ -14,6 +14,9 @@
         },
         size: {
             'x-small': 'kern-btn--x-small',
+            small: 'kern-btn--small',
+            large: 'kern-btn--large',
+            'x-large': 'kern-btn--x-large',
         },
     },
 ) -%}

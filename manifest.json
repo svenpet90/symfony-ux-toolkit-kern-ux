@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/symfony/ux-toolkit/refs/heads/3.x/schema-kit-v1.json",
   "name": "KERN-UX",
-  "description": "Component kit based on KERN-UX 2.7.",
+  "description": "Component kit based on KERN-UX 2.8.",
   "license": "MIT",
   "homepage": "https://ux.symfony.com/toolkit"
 }
