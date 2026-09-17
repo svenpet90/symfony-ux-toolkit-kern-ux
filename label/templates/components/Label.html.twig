@@ -1,7 +1,8 @@
 {# @prop size 'large'|'small' The label size. Defaults to normal size #}
+{# @prop subtle boolean Whether to render the label with the subtle (regular) font weight. Defaults to false #}
 {# @prop as The HTML tag to render. Defaults to `span` #}
 {# @prop optional string When set, appends an "optional" hint after the label text #}
-{%- props size = '', as = 'span', optional = null -%}
+{%- props size = '', subtle = false, as = 'span', optional = null -%}
 
 {%- set style = html_cva(
     base: 'kern-label',
@@ -10,10 +11,13 @@
             large: 'kern-label--large',
             small: 'kern-label--small',
         },
+        subtle: {
+            true: 'kern-label--subtle',
+        },
     },
 ) -%}
 
-<{{ as }} class="{{ style.apply({size}, attributes.render('class')) }}" {{ attributes }}>
+<{{ as }} class="{{ style.apply({size, subtle}, attributes.render('class')) }}" {{ attributes }}>
     {%- block content %}{% endblock -%}
     {%- if optional %} <span class="kern-label__optional">{{ optional }}</span>{% endif -%}
 </{{ as }}>

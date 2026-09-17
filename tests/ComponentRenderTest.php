@@ -152,6 +152,64 @@ final class ComponentRenderTest extends KernelTestCase
         self::assertStringContainsString('<hgroup class="kern-hgroup', $html);
     }
 
+    #[DataProvider('buttonSizes')]
+    public function testButtonRendersEverySizeModifier(string $size): void
+    {
+        $html = $this->render(sprintf('<twig:Button size="%s">Klick</twig:Button>', $size));
+
+        self::assertStringContainsString(sprintf('class="kern-btn kern-btn--primary kern-btn--%s"', $size), $html);
+    }
+
+    /**
+     * @return array<string, array{string}>
+     */
+    public static function buttonSizes(): array
+    {
+        // KERN-UX 2.8 added small, large and x-large next to the existing x-small.
+        return [
+            'x-small' => ['x-small'],
+            'small' => ['small'],
+            'large' => ['large'],
+            'x-large' => ['x-large'],
+        ];
+    }
+
+    public function testLabelRendersSubtleModifier(): void
+    {
+        // kern-label--subtle was added in KERN-UX 2.8.
+        $html = $this->render('<twig:Label subtle="true">Hinweis</twig:Label>');
+
+        self::assertStringContainsString('<span class="kern-label kern-label--subtle"', $html);
+    }
+
+    public function testLabelCombinesSizeAndSubtle(): void
+    {
+        $html = $this->render('<twig:Label size="small" subtle="true">Hinweis</twig:Label>');
+
+        self::assertStringContainsString('kern-label kern-label--small kern-label--subtle', $html);
+    }
+
+    public function testDetailsRendersKernMarkup(): void
+    {
+        // The Details component was introduced in KERN-UX 2.8.
+        $html = $this->render('<twig:Details title="Details zur Frist" open="true"><p class="kern-body">Inhalt</p></twig:Details>');
+
+        self::assertStringContainsString('<details class="kern-details', $html);
+        self::assertStringContainsString(' open', $html);
+        self::assertMatchesRegularExpression(
+            '#<summary class="kern-details__header">\s*<span class="kern-label">Details zur Frist</span>\s*</summary>#',
+            $html,
+        );
+        self::assertStringContainsString('<div class="kern-details__body">', $html);
+    }
+
+    public function testDetailsIsClosedByDefault(): void
+    {
+        $html = $this->render('<twig:Details title="Hilfetext">Inhalt</twig:Details>');
+
+        self::assertStringNotContainsString(' open', $html);
+    }
+
     private function render(string $template): string
     {
         return self::twig()->createTemplate($template)->render();

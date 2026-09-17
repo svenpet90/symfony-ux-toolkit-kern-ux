@@ -1,6 +1,6 @@
 {
   "name": "svenpet90/symfony-ux-toolkit-kern-ux",
-  "description": "Symfony UX Toolkit kit of Twig components based on the KERN-UX 2.6 design system.",
+  "description": "Symfony UX Toolkit kit of Twig components based on the KERN-UX 2.8 design system.",
   "license": "MIT",
   "type": "library",
   "require-dev": {
